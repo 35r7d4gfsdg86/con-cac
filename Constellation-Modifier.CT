@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="45">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>352712</ID>
+      <Description>"Constellation Modifier"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+{$lua}
+active_constellation = true
+local alist = getAddressList()
+if alist.Count &gt;= 1 then
+   local req = alist.getMemoryRecordByDescription("ACTIVATE ONCE")
+   if req ~= nil then
+      req.Active = false
+      sleep(100)
+      req.Active = true
+   end
+end
+{$asm}
+aobscanmodule(aob_constellation,UserAssembly.dll,45 11 C5 48 45 F2 4C 8B F1 4C)
+registersymbol(aob_constellation og_constellation)
+alloc(newmem_constellation,2000,aob_constellation)
+alloc(og_constellation,10)
+alloc(save1,40)
+alloc(save2,40)
+alloc(save3,40)
+label(return_constellation quit_constellation)
+
+newmem_constellation:
+  mov rsi,[rdx+20]
+  mov rsi,[rsi+10]
+  mov rsi,[rsi+10]
+  mov rsi,[rsi+20] // item[0]-&gt;fields
+  cmp [rsi+00000090],#10 // check type is avatar
+  jne quit_constellation
+  mov rsi,[rsi+00000088] // entity
+
+  cmp [rsi+24],#10000001
+  je _10000001
+  cmp [rsi+24],#10000002
+  je _10000002
+  cmp [rsi+24],#10000003
+  je _10000003
+  cmp [rsi+24],#10000004
+  je _10000004
+  cmp [rsi+24],#10000005
+  je _10000005
+  cmp [rsi+24],#10000006
+  je _10000006
+  cmp [rsi+24],#10000007
+  je _10000007
+  cmp [rsi+24],#10000008
+  je _10000008
+  cmp [rsi+24],#10000009
+  je _10000009
+  cmp [rsi+24],#10000010
+  je _10000010
+  cmp [rsi+24],#10000011
+  je _10000011
+  cmp [rsi+24],#10000012
+  je _10000012
+  cmp [rsi+24],#10000013
+  je _10000013
+  cmp [rsi+24],#10000014
+  je _10000014
+  cmp [rsi+24],#10000015
+  je _10000015
+  cmp [rsi+24],#10000016
+  je _10000016
+  cmp [rsi+24],#10000017
+  je _10000017
+  cmp [rsi+24],#10000018
+  je _10000018
+  cmp [rsi+24],#10000019
+  je _10000019
+  cmp [rsi+24],#10000020
+  je _10000020
+  cmp [rsi+24],#10000021
+  je _10000021
+  cmp [rsi+24],#10000022
+  je _10000022
+  cmp [rsi+24],#10000023
+  je _10000023
+  cmp [rsi+24],#10000024
+  je _10000024
+  cmp [rsi+24],#10000025
+  je _10000025
+  cmp [rsi+24],#10000026
+  je _10000026
+  cmp [rsi+24],#10000027
+  je _10000027
+  cmp [rsi+24],#10000029
+  je _10000029
+  cmp [rsi+24],#10000030
+  je _10000030
+  cmp [rsi+24],#10000031
+  je _10000031
+  cmp [rsi+24],#10000032
+  je _10000032
+  cmp [rsi+24],#10000033
+  je _10000033
+  cmp [rsi+24],#10000034
+  je _10000034
+  cmp [rsi+24],#10000035
+  je _10000035
+  cmp [rsi+24],#10000036
+  je _10000036
+  cmp [rsi+24],#10000037
+  je _10000037
+  cmp [rsi+24],#10000038
+  je _10000038
+  cmp [rsi+24],#10000039
+  je _10000039
+  cmp [rsi+24],#10000040
+  je _10000040
+  cmp [rsi+24],#10000041
+  je _10000041
+  cmp [rsi+24],#10000042
+  je _10000042
+  cmp [rsi+24],#10000043
+  je _10000043
+  cmp [rsi+24],#10000044
+  je _10000044
+  cmp [rsi+24],#10000045
+  je _10000045
+  cmp [rsi+24],#10000046
+  je _10000046
+  cmp [rsi+24],#10000047
+  je _10000047
+  cmp [rsi+24],#10000048
+  je _10000048
+  cmp [rsi+24],#10000049
+  je _10000049
+  cmp [rsi+24],#10000050
+  je _10000050
+  cmp [rsi+24],#10000051
+  je _10000051
+  cmp [rsi+24],#10000052
+  je _10000052
+  cmp [rsi+24],#10000053
+  je _10000053
+  cmp [rsi+24],#10000054
+  je _10000054
+  cmp [rsi+24],#10000055
+  je _10000055
+  cmp [rsi+24],#10000056
+  je _10000056
+  cmp [rsi+24],#10000057
+  je _10000057
+  cmp [rsi+24],#10000058
+  je _10000058
+  cmp [rsi+24],#10000059
+  je _10000059
+  cmp [rsi+24],#10000060
+  je _10000060
+  cmp [rsi+24],#10000061
+  je _10000061
+  cmp [rsi+24],#10000062
+  je _10000062
+  cmp [rsi+24],#10000063
+  je _10000063
+  cmp [rsi+24],#10000064
+  je _10000064
+  cmp [rsi+24],#10000065
+  je _10000065
+  cmp [rsi+24],#10000066
+  je _10000066
+  cmp [rsi+24],#10000067
+  je _10000067
+  cmp [rsi+24],#10000068
+  je _10000068
+  cmp [rsi+24],#10000069
+  je _10000069
+  cmp [rsi+24],#10000070
+  je _10000070
+  cmp [rsi+24],#10000071
+  je _10000071
+  cmp [rsi+24],#10000072
+  je _10000072
+  cmp [rsi+24],#10000073
+  je _10000073
+  cmp [rsi+24],#10000074
+  je _10000074
+  cmp [rsi+24],#10000075
+  je _10000075
+  cmp [rsi+24],#10000076
+  je _10000076
+  cmp [rsi+24],#10000077
+  je _10000077
+  cmp [rsi+24],#10000078
+  je _10000078
+  cmp [rsi+24],#10000079
+  je _10000079
+  cmp [rsi+24],#10000080
+  je _10000080
+  cmp [rsi+24],#10000081
+  je _10000081
+  cmp [rsi+24],#10000082
+  je _10000082
+  cmp [rsi+24],#10000083
+  je _10000083
+  cmp [rsi+24],#10000084
+  je _10000084
+  cmp [rsi+24],#10000085
+  je _10000085
+  cmp [rsi+24],#10000086
+  je _10000086
+  cmp [rsi+24],#10000087
+  je _10000087
+  cmp [rsi+24],#10000088
+  je _10000088
+  cmp [rsi+24],#10000089
+  je _10000089
+
+  jmp quit_constellation
+
+_10000001:
+  mov [save3],#11
+  jmp newmem_constellation2
+_10000002:
+  mov [save3],#21
+  jmp newmem_constellation2
+_10000003:
+  mov [save3],#31
+  jmp newmem_constellation2
+_10000004:
+  mov [save3],#61
+  jmp newmem_constellation2
+_10000005:
+  mov [save3],#51
+  jmp newmem_constellation2
+_10000006:
+  mov [save3],#41
+  jmp newmem_constellation2
+_10000007:
+  mov [save3],#71
+  jmp newmem_constellation2
+_10000008:
+  mov [save3],#81
+  jmp newmem_constellation2
+_10000009:
+  mov [save3],#91
+  jmp newmem_constellation2
+_10000010:
+  mov [save3],#101
+  jmp newmem_constellation2
+_10000011:
+  mov [save3],#111
+  jmp newmem_constellation2
+_10000012:
+  mov [save3],#121
+  jmp newmem_constellation2
+_10000013:
+  mov [save3],#131
+  jmp newmem_constellation2
+_10000014:
+  mov [save3],#141
+  jmp newmem_constellation2
+_10000015:
+  mov [save3],#151
+  jmp newmem_constellation2
+_10000016:
+  mov [save3],#161
+  jmp newmem_constellation2
+_10000017:
+  mov [save3],#171
+  jmp newmem_constellation2
+_10000018:
+  mov [save3],#181
+  jmp newmem_constellation2
+_10000019:
+  mov [save3],#191
+  jmp newmem_constellation2
+_10000020:
+  mov [save3],#201
+  jmp newmem_constellation2
+_10000021:
+  mov [save3],#211
+  jmp newmem_constellation2
+_10000022:
+  mov [save3],#221
+  jmp newmem_constellation2
+_10000023:
+  mov [save3],#231
+  jmp newmem_constellation2
+_10000024:
+  mov [save3],#241
+  jmp newmem_constellation2
+_10000025:
+  mov [save3],#251
+  jmp newmem_constellation2
+_10000026:
+  mov [save3],#261
+  jmp newmem_constellation2
+_10000027:
+  mov [save3],#271
+  jmp newmem_constellation2
+_10000028:
+  mov [save3],#281
+  jmp newmem_constellation2
+_10000029:
+  mov [save3],#291
+  jmp newmem_constellation2
+_10000030:
+  mov [save3],#301
+  jmp newmem_constellation2
+_10000031:
+  mov [save3],#311
+  jmp newmem_constellation2
+_10000032:
+  mov [save3],#321
+  jmp newmem_constellation2
+_10000033:
+  mov [save3],#331
+  jmp newmem_constellation2
+_10000034:
+  mov [save3],#341
+  jmp newmem_constellation2
+_10000035:
+  mov [save3],#351
+  jmp newmem_constellation2
+_10000036:
+  mov [save3],#361
+  jmp newmem_constellation2
+_10000037:
+  mov [save3],#371
+  jmp newmem_constellation2
+_10000038:
+  mov [save3],#381
+  jmp newmem_constellation2
+_10000039:
+  mov [save3],#391
+  jmp newmem_constellation2
+_10000040:
+  mov [save3],#401
+  jmp newmem_constellation2
+_10000041:
+  mov [save3],#411
+  jmp newmem_constellation2
+_10000042:
+  mov [save3],#421
+  jmp newmem_constellation2
+_10000043:
+  mov [save3],#431
+  jmp newmem_constellation2
+_10000044:
+  mov [save3],#441
+  jmp newmem_constellation2
+_10000045:
+  mov [save3],#451
+  jmp newmem_constellation2
+_10000046:
+  mov [save3],#461
+  jmp newmem_constellation2
+_10000047:
+  mov [save3],#471
+  jmp newmem_constellation2
+_10000048:
+  mov [save3],#481
+  jmp newmem_constellation2
+_10000049:
+  mov [save3],#491
+  jmp newmem_constellation2
+_10000050:
+  mov [save3],#501
+  jmp newmem_constellation2
+_10000051:
+  mov [save3],#511
+  jmp newmem_constellation2
+_10000052:
+  mov [save3],#521
+  jmp newmem_constellation2
+_10000053:
+  mov [save3],#531
+  jmp newmem_constellation2
+_10000054:
+  mov [save3],#541
+  jmp newmem_constellation2
+_10000055:
+  mov [save3],#551
+  jmp newmem_constellation2
+_10000056:
+  mov [save3],#561
+  jmp newmem_constellation2
+_10000057:
+  mov [save3],#571
+  jmp newmem_constellation2
+_10000058:
+  mov [save3],#581
+  jmp newmem_constellation2
+_10000059:
+  mov [save3],#591
+  jmp newmem_constellation2
+_10000060:
+  mov [save3],#601
+  jmp newmem_constellation2
+_10000061:
+  mov [save3],#611
+  jmp newmem_constellation2
+_10000062:
+  mov [save3],#621
+  jmp newmem_constellation2
+_10000063:
+  mov [save3],#631
+  jmp newmem_constellation2
+_10000064:
+  mov [save3],#641
+  jmp newmem_constellation2
+_10000065:
+  mov [save3],#651
+  jmp newmem_constellation2
+_10000066:
+  mov [save3],#661
+  jmp newmem_constellation2
+_10000067:
+  mov [save3],#671
+  jmp newmem_constellation2
+_10000068:
+  mov [save3],#681
+  jmp newmem_constellation2
+_10000069:
+  mov [save3],#691
+  jmp newmem_constellation2
+_10000070:
+  mov [save3],#701
+  jmp newmem_constellation2
+_10000071:
+  mov [save3],#711
+  jmp newmem_constellation2
+_10000072:
+  mov [save3],#721
+  jmp newmem_constellation2
+_10000073:
+  mov [save3],#731
+  jmp newmem_constellation2
+_10000074:
+  mov [save3],#741
+  jmp newmem_constellation2
+_10000075:
+  mov [save3],#751
+  jmp newmem_constellation2
+_10000076:
+  mov [save3],#761
+  jmp newmem_constellation2
+_10000077:
+  mov [save3],#771
+  jmp newmem_constellation2
+_10000078:
+  mov [save3],#781
+  jmp newmem_constellation2
+_10000079:
+  mov [save3],#791
+  jmp newmem_constellation2
+_10000080:
+  mov [save3],#801
+  jmp newmem_constellation2
+_10000081:
+  mov [save3],#811
+  jmp newmem_constellation2
+_10000082:
+  mov [save3],#821
+  jmp newmem_constellation2
+_10000083:
+  mov [save3],#831
+  jmp newmem_constellation2
+_10000084:
+  mov [save3],#841
+  jmp newmem_constellation2
+_10000085:
+  mov [save3],#851
+  jmp newmem_constellation2
+_10000086:
+  mov [save3],#861
+  jmp newmem_constellation2
+_10000087:
+  mov [save3],#871
+  jmp newmem_constellation2
+_10000088:
+  mov [save3],#881
+  jmp newmem_constellation2
+_10000089:
+  mov [save3],#891
+  jmp newmem_constellation2
+
+newmem_constellation2:
+  mov [rsi+60],#6 // cons = 6
+  mov r13,[rsi+48] // talentList
+  mov [r13+18],#6 // talentList array count = 6
+
+  mov [save1],rax
+  mov [save2],rcx
+
+  push edx
+  reassemble(aob_uint32-17) //mov rcx,[UserAssembly.dll+D219670]
+  mov edx,#6
+  call aob_il2cpparray //call UserAssembly.dll+2C746D0
+  mov r13,rax
+  pop edx
+
+  mov rax,[save1]
+  mov rcx,[save2]
+
+  push eax
+  mov eax,[save3]
+  mov [r13+20],eax
+  inc eax
+  mov [r13+24],eax
+  inc eax
+  mov [r13+28],eax
+  inc eax
+  mov [r13+2C],eax
+  inc eax
+  mov [r13+30],eax
+  inc eax
+  mov [r13+34],eax
+  pop eax
+
+  mov rsi,[rsi+48]
+  mov [rsi+10],r13 // talentList array content
+  jmp quit_constellation
+
+quit_constellation:
+  mov r13d,r8d
+  mov rsi,rdx
+  jmp return_constellation
+
+og_constellation:
+  readmem(aob_constellation,6)
+
+save1:
+  dq
+save2:
+  dq
+save3:
+  dd
+
+aob_constellation:
+  jmp newmem_constellation
+  nop
+return_constellation:
+
+[DISABLE]
+aob_constellation:
+  readmem(og_constellation,6)
+
+unregistersymbol(*)
+dealloc(*)
+    
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
